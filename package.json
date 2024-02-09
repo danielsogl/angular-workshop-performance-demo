@@ -5,6 +5,8 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build:stats": "ng build --named-chunks=false --output-hashing=none --stats-json",
+    "analyze:bundle": "esbuild-visualizer --metadata ./dist/angular-workshop-performance-demo/stats.json --filename=./stats/stats.html",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
@@ -27,6 +29,7 @@
     "@angular/cli": "^17.1.3",
     "@angular/compiler-cli": "^17.1.0",
     "@types/jasmine": "~5.1.0",
+    "esbuild-visualizer": "0.6.0",
     "jasmine-core": "~5.1.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.2.0",

@@ -1,27 +1,21 @@
-# AngularWorkshopPerformanceDemo
+# Angular Architects Performance Demo
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.1.3.
+## Analyze Bundle Size (esbuild variant)
 
-## Development server
+Understanding the size of your application bundle is crucial for performance optimization. To facilitate this analysis, we utilize a `stats.json` file that describes all generated bundles in detail. The Angular CLI makes this easy with the `--stats-json` flag, which creates the necessary Esbuild metadata file.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+### Steps to Generate Bundle Analysis
 
-## Code scaffolding
+Follow these steps to generate the `stats.json` file and visualize the bundle size with an `stats.html` file:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+```shell
+npm run build:stats
+npm run analyze:bundle
+open stats/stats.html
+```
 
-## Build
+This process compiles your application with the Angular CLI, incorporating the `--stats-json` flag to produce the metadata file. Subsequently, it generates a visualization of your bundle size, making it easier to understand and optimize.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### Online Analysis Tool
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Alternatively, for a more interactive analysis, you can use the online tool available at [esbuild.github.io](https://esbuild.github.io) to analyze your bundle directly in your browser.
