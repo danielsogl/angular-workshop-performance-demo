@@ -1,0 +1,20 @@
+<mat-grid-list cols="2" rowHeight="2:1">
+  <mat-grid-tile>
+    <button mat-button (click)="loadLodashLibrary()">Run lodash isEmpty</button>
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <button mat-button (click)="loadLodashLibraryLazy()">Run lodash isEmpty lazy</button>
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <button mat-button (click)="loadLodashEsLibrary()">Run lodash-es isEmpty</button>
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <button mat-button (click)="loadLodashEsLibraryLazy()">Run lodash-es isEmpty lazy</button>
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <button mat-button (click)="loadComponentLazy()">Load heavy component lazy</button>
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <ng-template #placeholder />
+  </mat-grid-tile>
+</mat-grid-list>
