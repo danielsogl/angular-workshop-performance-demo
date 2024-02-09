@@ -1,0 +1,39 @@
+@for (item of [0,1,2,3,4,5]; track $index) {
+<app-lazy-component title="Normal Card" />
+}
+
+
+<!-- default defer on idle -->
+@defer {
+<app-lazy-component title="Defer Card" />
+}
+
+<!-- defer with placeholder -->
+@defer {
+<app-lazy-component title="Defer Card" />
+} @placeholder(minimum 5s) {
+<app-lazy-component title="Placeholder Card" />
+}
+
+<!-- defer with timer -->
+@defer (on timer(5)) {
+<app-lazy-component title="Delayed Defer Card" />
+} @placeholder {
+<app-lazy-component title="Delay Placeholder Card" />
+}
+
+<!-- defer after viewPort -->
+@defer (on viewport) {
+<app-lazy-component title="Defer Viewport Card" />
+} @placeholder {
+<app-lazy-component title="Defer Viewport Placeholder" />
+}
+
+<app-lazy-component #hoverCard title="Hover to load component" />
+
+<!-- defer on hover over another element -->
+@defer (on hover(hoverCard)) {
+<app-lazy-component title="Defer Hover Interaction Card" />
+} @placeholder {
+<app-lazy-component title="Defer Hover Placeholder" />
+}
